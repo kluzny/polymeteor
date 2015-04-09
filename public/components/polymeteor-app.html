@@ -97,7 +97,17 @@
                              on-tap="{{cyclePages}}">
           <template repeat="{{page, i in pages}}">
             <section hash="{{page.hash}}" layout vertical center-center>
-              <div>{{page.name}}</div>
+              <div>{{page.name}}-test</div>
+              <template repeat="{{item in items}}">
+                <div>{{item.name}}-test</div>
+              </template>
+              <template bind="{{items.lastUpdate | getItems}}">
+                <ul>
+                  <template repeat>
+                  <li>{{name}}</li>
+                  </template>
+                </ul>
+              </template>
             </section>
           </template>
         </core-animated-pages>
@@ -107,6 +117,28 @@
   </template>
   <script>
     Polymer('polymeteor-app', {
+      ready: function () {
+        var items = this.items;
+        this.items.observeChanges(  //Observe the change of cursor and update a field
+        {
+          added: function(id, fields) {
+            console.log("Item added");
+            items.lastUpdate = new Date();
+          },
+          changed: function(id, fields) {
+            console.log("Item changed");
+            items.lastUpdate = new Date();
+          },
+          removed: function(id, fields) {
+            console.log("Item deleted");
+            items.lastUpdate = new Date();
+          }
+        });
+      },
+      items: Items.find(),
+      getItems : function() {
+        return Items.find().map(function(p) { return {id: p.id, name: p.name}})
+      },
       pages: [
         {name: 'Single', hash: 'one'},
         {name: 'page', hash: 'two'},
