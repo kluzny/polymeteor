@@ -1,1 +1,6 @@
 /* CSS declarations go here */
+
+body {
+  font-family: "RobotoDraft";
+  font-weight: 300;
+}
