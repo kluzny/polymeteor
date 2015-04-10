@@ -1,0 +1,59 @@
+::shadow .hero-two{
+  background-color: rgba(0, 123, 202, .4);
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  box-shadow: 0 0 10px black,
+             -1px -1px 20px grey,
+             inset 0 0 20px #003488;
+  background-image: url('../pic1.jpg');
+}
+::shadow .hero-one{
+  background-image: url('../pic1.jpg');
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(240, 45, 0, .6);
+  width: 100%;
+  height: 20%;
+  box-shadow: 0 0 10px black,
+              1px 1px 20px grey,
+              10px 10px 20px #efefef,
+              inset -1px -1px 10px white,
+              inset -10px -10px 20px #afafaf;
+}
+::shadow .hero-three{
+  position: absolute;
+  z-index: 0;
+  top: 25%;
+  left: 25%;
+  background-color: rgba(0, 200, 100, .3);
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px white,
+              10px 10px 20px black;
+}
+::shadow .hero-four{
+  color: white;
+  border-radius: 0;
+  position: absolute;
+  right: 25%;
+  top: 25%;
+  background-color: rgba(60, 20, 100, .6);
+  height: 50%;
+  width: 50%;
+  box-shadow: inset 0 0 20px black;
+}
+::shadow .hero-five{
+  position: absolute;
+  background-image: url('../pic2.jpg');
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(30, 30, 30, .4);
+}
+
